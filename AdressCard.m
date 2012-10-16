@@ -31,6 +31,16 @@
     }
 }
 
+-(NSComparisonResult) compareNames: (id) element
+{
+    //NSString *thisString = name;
+    //NSString *myStr = [element name];
+    //NSLog("Sorting: %@", [self name]);
+    NSComparisonResult result = [name compare: [element name]];
+    NSLog(@"Result %li", result);
+    return result;
+}
+
 -(void) print
 {
     NSLog(@"================================================");

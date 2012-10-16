@@ -75,4 +75,14 @@
     return nil;
 }
 
+-(void) sort
+{
+    [book sortUsingSelector:@selector(compareNames:)];
+    
+    
+    //[book sortUsingComparator:^NSComparisonResult(AdressCard *obj1, AdressCard *obj2) {
+    //    return [obj1.name compare: [obj2.name]];
+    //}];
+}
+
 @end
