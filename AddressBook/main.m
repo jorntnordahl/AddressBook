@@ -16,7 +16,17 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
+        //again I would make this a constructor call rather than set the props after the fact
+        //also if you really use a default constructor like this
+        //you can do [AdressCard new];  its the equivalent of alloc init..
         AdressCard *card = [[AdressCard alloc] init];
+        //although many obj C library methods will force you
+        //to use this syntax its actually against modern obj C 
+        //coding conventions to call properties not using dot syntax
+        //I think it has something to do with Apple's key value coding shit
+        //its not bad or wrong, but generally preferred to use the property
+        //not call the method explcitly - this is pretty java-y
+        //card.name = @"Jorn Nordahl";
         [card setName:@"Jorn Nordahl"];
         [card setEmail:@"JornTNordahl@gmail.com"];
         
@@ -43,6 +53,7 @@ int main(int argc, const char * argv[])
         [myBook addCard:card2];
         [myBook addCard:card3];
         [myBook addCard:card4];
+        //myBook.book.count;
         NSLog(@"Entries: %li", [myBook entries]);
         [myBook list];
         
@@ -57,6 +68,7 @@ int main(int argc, const char * argv[])
         }
         else
         {
+            //NSLog(foundCard.description);
             [foundCard print];
         }
         
@@ -64,6 +76,8 @@ int main(int argc, const char * argv[])
         [myBook removeCard:foundCard];
         
         NSLog(@"The following entries are left in the address book:");
+        //if this prints all the elements I would make it a -(NSString *)description override and 
+        //NSLog the description
         [myBook list];
     
         // sorting:
