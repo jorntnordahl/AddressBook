@@ -21,8 +21,8 @@
 //then you have a nice cheap immutable object
 //in obj C readonly, and immutability are always the default choice.
 //sometimes the real world necessitates this though
-//if you want a mutable object declare these guys as props and ditch this 
-//its again contrary to obj coding conventions afaik
+//if you want a mutable object just use the props
+
 -(void) setName: (NSString *) theName andEmail: (NSString *) theEmail;
 -(void) print;
 
