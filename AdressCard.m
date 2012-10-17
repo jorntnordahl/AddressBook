@@ -33,11 +33,11 @@
 
 -(NSComparisonResult) compareNames: (id) element
 {
-    //NSString *thisString = name;
-    //NSString *myStr = [element name];
-    //NSLog("Sorting: %@", [self name]);
+    //AdressCard *myCard = (AdressCard *) element;
+    //NSLog(@"Sorting: %s vs. %s", [name UTF8String], [[element name] UTF8String]);
+    //NSLog(@"Sorting: %@ vs. %@", self.name, [myCard name]);
     NSComparisonResult result = [name compare: [element name]];
-    NSLog(@"Result %li", result);
+    NSLog(@"Sorting: %-15s vs. %-15s = %li", [name UTF8String], [[element name] UTF8String], result);
     return result;
 }
 
