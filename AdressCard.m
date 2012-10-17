@@ -62,7 +62,8 @@
 }
 
 //toString in obj C is an override of -(NSString *)description from NSObject
-//so this should be renamed
+//so this should be renamed and logged from calling code - as a bonus the debugger will print
+//your objects out for you nicely if you implement description
 -(void) print
 {
     NSLog(@"================================================");
