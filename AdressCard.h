@@ -18,7 +18,7 @@
 //personal style but I would omit this in favor of a constructor
 //taking the needed parameters
 //then just create a new one and swap the instance out of the array
-//then you have a nice cheap immutable object
+//then you have a nice cheap immutable object *if you make the above props readonly*
 //in obj C readonly, and immutability are always the default choice.
 //sometimes the real world necessitates this though
 //if you want a mutable object just use the props
