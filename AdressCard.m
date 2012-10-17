@@ -34,6 +34,8 @@
 //to never create duplicate objects if possible
 //maybe you need this for sorting but I thought there was a different comparator
 //function for that
+//unless theres really a need I would implement this as
+//return theCard == self;
 -(BOOL) isEqual:(AdressCard *) theCard
 {
     if ([name isEqualToString:theCard.name] == YES &&
