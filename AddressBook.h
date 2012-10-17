@@ -16,6 +16,7 @@
 @interface AddressBook : NSObject
 
 //NSString is an immutable object why copy it?
+//@property (nonatomic, retain) NSString *bookName;
 @property (nonatomic, copy) NSString *bookName;
 
 //exposing the book as an array is ok saves you having to create your own iterator
@@ -26,6 +27,12 @@
 //there will be no setter and you can create the internal NSMutableArray * as a field
 //and return it as NSArray in your custom getter
 @property (nonatomic, strong) NSMutableArray *book;
+//also I havent built this project in xcode if its an ARC project,
+//use strong and weak, if its non ARC use assign or retain
+//its a subtle difference and you can get away with mixing them,
+//but my understanding is that strong and weak are intended for use by ARC
+//if its a manually memory managed project retain and assign I *believe* are preferred
+//I could be wrong
 
 -(id) initWithName: (NSString *) name;
 -(void) addCard: (AdressCard *) theCard;
