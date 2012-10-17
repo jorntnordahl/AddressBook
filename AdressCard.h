@@ -10,8 +10,19 @@
 
 @interface AdressCard : NSObject
 
+//again imo copy is extraneous just retain the strings
+//also declaring multiple props on one line is Im pretty sure against obj C code style
+//at least as some people interpret it
 @property (copy, nonatomic) NSString *name, *email;
 
+//personal style but I would omit this in favor of a constructor
+//taking the needed parameters
+//then just create a new one and swap the instance out of the array
+//then you have a nice cheap immutable object
+//in obj C readonly, and immutability are always the default choice.
+//sometimes the real world necessitates this though
+//if you want a mutable object declare these guys as props and ditch this 
+//its again contrary to obj coding conventions afaik
 -(void) setName: (NSString *) theName andEmail: (NSString *) theEmail;
 -(void) print;
 
