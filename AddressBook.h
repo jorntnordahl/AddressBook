@@ -37,6 +37,8 @@
 -(id) initWithName: (NSString *) name;
 -(void) addCard: (AdressCard *) theCard;
 -(void) removeCard: (AdressCard *) theCard;
+
+//not needed - just use .count property on your book property
 -(NSUInteger) entries;
 -(void) list;
 -(AdressCard *) lookup: (NSString *) theName;
