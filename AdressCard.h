@@ -24,6 +24,9 @@
 //if you want a mutable object just use the props
 
 -(void) setName: (NSString *) theName andEmail: (NSString *) theEmail;
+
+//toString is called -(NSString *)description in objective C its an override from NSObject
+//no need to declare it in the header
 -(void) print;
 
 @end
