@@ -77,12 +77,14 @@
 
 -(void) sort
 {
+    // sort using a selector:
     [book sortUsingSelector:@selector(compareNames:)];
-    
-    
-    //[book sortUsingComparator:^NSComparisonResult(AdressCard *obj1, AdressCard *obj2) {
-    //    return [obj1.name compare: [obj2.name]];
-    //}];
+        
+    // sort using a comparator:
+    [book sortUsingComparator:^NSComparisonResult(AdressCard *obj1, AdressCard *obj2) {
+        NSLog(@"Comparator: %@ vs. %@", [obj1 name], [obj2 name]);
+        return [[obj1 name] compare: [obj2 name]];
+    }];
 }
 
 @end
