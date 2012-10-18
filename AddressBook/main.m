@@ -48,7 +48,7 @@ int main(int argc, const char * argv[])
         
         
         // searching for address card by name:
-        NSString *search = @"Jrn Nordahl";
+        NSString *search = @"Jorn Nordahl";
         AdressCard *foundCard = [myBook lookup:search];
         NSLog(@"Found Card: ");
         if (foundCard == nil)
@@ -70,7 +70,6 @@ int main(int argc, const char * argv[])
         NSLog(@"Sorted Address Book:");
         [myBook sort];
         [myBook list];
-        
     }
     return 0;
 }

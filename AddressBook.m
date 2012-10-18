@@ -10,7 +10,7 @@
 
 @implementation AddressBook
 
-@synthesize book, bookName;
+@synthesize book, bookName, cards;
 
 -(id) initWithName: (NSString *) name
 {
@@ -20,6 +20,7 @@
     {
         bookName = [NSString stringWithString:name];
         book = [NSMutableArray array];
+        cards = [[NSMutableDictionary alloc]init];
     }
     
     return self;
@@ -33,11 +34,13 @@
 -(void) addCard: (AdressCard *) theCard
 {
     [book addObject:theCard];
+    [cards setObject:theCard forKey:theCard.name];
 }
 
 -(void) removeCard: (AdressCard *) theCard
 {
     [book removeObject:theCard];
+    [cards removeObjectForKey:theCard.name];
 }
 
 
@@ -64,11 +67,11 @@
 
 -(AdressCard *) lookup: (NSString *) theName
 {
-    for (AdressCard *nextCard in book)
+    if (cards != nil)
     {
-        if ( [nextCard.name caseInsensitiveCompare:theName] == NSOrderedSame)
+        if ([cards objectForKey:theName] != nil)
         {
-            return nextCard;
+            return [cards objectForKey:theName];
         }
     }
     

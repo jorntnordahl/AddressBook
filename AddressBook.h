@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSString *bookName;
 @property (nonatomic, strong) NSMutableArray *book;
+@property (nonatomic, strong) NSMutableDictionary *cards;
 
 -(id) initWithName: (NSString *) name;
 -(void) addCard: (AdressCard *) theCard;
